@@ -100,5 +100,32 @@
         android:layout_marginLeft="90dp"
         android:textSize="14dp"
 ></TextView>
+    <RelativeLayout
+        android:layout_width="335dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="20dp"
+
+        >
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="20dp"
+            android:text="Dummy Username = test123"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            >
+
+        </TextView>
+
+        <TextView
+            android:layout_width="300dp"
+            android:layout_height="30dp"
+            android:layout_marginTop="55dp"
+            android:text="Dummy Password = test12345"
+            android:textColor="@color/black"
+            android:textSize="15dp">
+
+        </TextView>
+    </RelativeLayout>
 </LinearLayout>
 

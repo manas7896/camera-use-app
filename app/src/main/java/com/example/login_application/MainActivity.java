@@ -19,12 +19,22 @@ public class MainActivity extends AppCompatActivity {
         TextView password = (TextView) findViewById(R.id.passwordtxt);
 
         String pass = password.getText().toString();
+        String user = username.getText().toString();
         Button loginbt = (Button) findViewById(R.id.loginbutton);
 
         loginbt.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(username.getText().toString().equals("Manas_123") && password.getText().toString().equals("manas1234567"))
+                if((username.getText().toString().length()==0) || (password.getText().toString().length()==0))
+                {
+                    if(password.getText().toString().length()==0)
+                    Toast.makeText(MainActivity.this, "Password cannot be null", Toast.LENGTH_SHORT).show();
+
+                    if(username.getText().toString().length()==0)
+                        Toast.makeText(MainActivity.this, "Username cannot be null", Toast.LENGTH_SHORT).show();
+                }
+                else
+                {if((username.getText().toString().equals("Manas") && password.getText().toString().equals("manas12345")) || (username.getText().toString().equals("test123") && password.getText().toString().equals("test12345")))
                 {
                     Toast.makeText(MainActivity.this,"Login Successful !!",Toast.LENGTH_SHORT).show();
                     String user = username.getText().toString();
@@ -36,6 +46,10 @@ public class MainActivity extends AppCompatActivity {
                 else
                 {
                     Toast.makeText(MainActivity.this,"Login UnSuccessful !!",Toast.LENGTH_SHORT).show();
+                    if(password.getText().toString().length()<7)
+                        Toast.makeText(MainActivity.this, "Password should be of 8 letters", Toast.LENGTH_SHORT).show();
+
+                }
                 }
             }
 
